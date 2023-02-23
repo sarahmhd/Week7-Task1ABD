@@ -1,0 +1,649 @@
+
+// =============== GOOGLE FONTS ===============
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&display=swap')
+/*=============== 1- components --> Colors , --> mixins , etc... ===============*/
+@import 'components'
+/*========== components ==========*/
+@import 'media'
+/*=============== 2- General Style ===============*/
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+a
+    text-decoration: none
+.container,
+.container-fluid
+    height: 100%
+
+img
+    width: 100%
+
+h1,h2,h3,h4,h5,h6,p
+    padding: 0
+    margin: 0
+*:focus
+    outline: none !important
+
+@keyframes animation-box-shadow
+    0%
+        box-shadow: 0 0 5px 0 #ffa45c99
+    50%
+        box-shadow: 0 0 5px 5px #ffa45c99
+    100%
+        box-shadow: 0 0 5px 8px #ffa45c99
+@keyframes top
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(-5px)
+
+.section-text
+    h2
+        font-size: 2.5rem
+        font-weight: 500
+        margin-bottom: 20px
+    p
+        font-size: 0.95rem
+
+html
+    body
+        user-select: none
+        font-family: "Open Sans", Arial, sans-serif
+        scroll-behavior: smooth
+        .fixed-dev
+            .fixed-dev-content
+                .col-content
+                    color: #fff
+                    font-size: 0.7rem
+                    gap: 10px
+        header
+            background: #fff
+            color: #000
+            .navbar
+                position: relative
+                justify-content: space-between
+                .navbar-brand
+                    margin-right: auto
+                    a
+                        text-transform: uppercase
+                        letter-spacing: 2px
+                        font-weight: 900
+                        color: #000
+                .navbar-toggler
+                    color: #000
+                    font-size: 1.5rem
+                .collapse.navbar-collapse
+                    align-items: center
+                    gap: 35px
+                    padding-top: 0
+                    justify-content: end
+                    .navbar-nav
+                        gap: 25px
+                        > li
+                            > a
+                                color: #141517
+                                font-size: 0.8rem
+                                text-transform: uppercase
+                                font-weight: 500
+                                .icon
+                                    font-size: 0.55rem !important
+                                    margin-top: 3px
+                                &:hover
+                                    color: $main-color
+                            > a.active
+                                color: $main-color
+                                position: relative
+                .collapse.navbar-collapse.active
+                    display: flex
+                    justify-content: center
+                    padding: 20px
+                    text-align: center
+                    background: $main-color
+                .collapse.navbar-collapse.active
+                    .navbar-nav
+                        a.active
+                            &::before
+                                content: none !important
+                .drop-down
+                    position: absolute
+                    background: #fff
+                    top: calc(100% + 30px)
+                    opacity: 0
+                    visibility: hidden
+                    min-width: 180px
+                    // overflow: hidden
+                    transition: top 0.5s
+                    border-radius: 6px
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12)
+                    font-size: 0.8rem
+                    &::before
+                        content: ""
+                        position: absolute
+                        inset: 0
+                        width: 100%
+                        height: 3px
+                        z-index: 4
+                        background: $main-color
+                        border-radius: 6px 6px 0 0
+                        z-index: 99998
+                    &::after
+                        content: ""
+                        position: absolute
+                        border-color: transparent transparent $main-color transparent
+                        border-style: solid
+                        border-width: 10px 10px 10px 10px
+                        bottom: calc(100% + -3px)
+                        z-index: -1
+                        left: 10%
+                    li
+                        padding: 10px 25px
+                        a
+                            transition: 0.3s
+                            display: block
+                            color: #000 !important
+                        &:hover
+                            opacity: 1
+                            a
+                                opacity: 1
+                                color: $main-color !important
+                .drop-item
+                    position: relative
+                    padding-right: 10px
+                    &::before
+                        content: ""
+                        border-style: solid
+                        border-color: #000 transparent transparent transparent
+                        border-width: 4px
+                        position: absolute
+                        right: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                    &:hover
+                        .drop-down
+                            opacity: 1
+                            visibility: visible
+                            top: calc( 100% + 17px)
+            .navbar-toggler
+                outline: none !important
+        header.active
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15) !important
+        main
+            .welcome
+                min-height: 90vh
+                overflow-x: hidden
+                .welcome-content
+                    .row
+                        .col-content
+                            padding: 0 10px 0 100px
+                            height: 100%
+                            gap: 20px
+                            .sub-heading,
+                            h3
+                                text-transform: uppercase
+                                letter-spacing: 3px
+                                font-size: 0.79rem
+                                opacity: 0.6
+                                padding-bottom: 20px
+                            .sub-heading
+                                position: relative
+                                &::before
+                                    content: ""
+                                    position: absolute
+                                    width: 100px
+                                    height: 1px
+                                    background: #000
+                                    bottom: 0
+                                    left: -7%
+                            .text
+                                position: relative
+                                gap: 33px
+                                h3
+                                    position: absolute
+                                    writing-mode: vertical-rl
+                                    transform: rotate(180deg)
+                                    left: -50px
+                                    height: 100%
+                                    text-align: right
+                                    padding: 0
+                                h1
+                                    font-weight: 300
+                                    font-size: 2.8rem
+                                    line-height: 1.2
+                                    font-family: Sans
+                                    span
+                                        font-weight: bolder
+                                p
+                                    line-height: 2
+                                    opacity: 0.5
+                                a.btn
+                                    width: fit-content
+                                    background: $main-color
+                                    color: #fff
+                                    padding: 13px 45px
+                                    border-radius: 30px
+                                    border: 1px solid $main-color
+                                    transition: 0.5s
+                                    &:hover
+                                        background: #fff
+                                        color: $main-color
+                            .img
+                                img
+            .ship-ways
+                min-height: 100vh
+                background: $second-color
+                .ship-ways-content
+                    .row
+                        .img
+                            position: relative
+                            width: 100%
+                            height: 100%
+                            background: url("../../assets/imgs/about.jpg.webp")
+                            min-height: 100vh
+                            background-size: cover
+                            background-repeat: no-repeat
+                            .overlay-icon
+                                cursor: pointer
+                                position: absolute
+                                left: 50%
+                                top: 50%
+                                background: $main-color
+                                width: 100px
+                                height: 100px
+                                border-radius: 50%
+                                text-align: center
+                                line-height: 100px
+                                font-size: 2rem
+                                color: #fff
+                                transform: translate(-50%,-50%)
+                                animation: animation-box-shadow 0.8s ease-in-out infinite alternate
+                                svg
+                        .col-content
+                            padding: 100px 20px
+                            gap: 35px
+                            h2
+                                font-size: 2.7rem
+                                font-weight: 500
+                                line-height: 1.3
+                            p
+                                line-height: 1.5
+                            .packaging-boxs
+                                .box
+                                    align-items: center
+                                    text-align: center
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 30px
+                                    .icon
+                                        width: 50px
+                                        height: 70px
+                                        border: 1px solid #ccc
+                                        text-align: center
+                                        line-height: 70px
+                                        svg
+                                    h5
+                                        text-transform: uppercase
+                                        letter-spacing: 2px
+                                        font-size: 0.9rem
+                                    p
+                                        font-size: 0.9rem
+                                        line-height: 2
+            .best-seller
+                background: $second-color
+                .best-seller-content
+                    .section-text
+                    .row
+                        .col-content
+                            background: #fff
+                            border-radius: 5px
+                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.12)
+                            transition: 0.5s
+                            .img
+                                position: relative
+                                overflow: hidden
+                                img
+                                    transition: 0.5s
+                                span.discount
+                                    position: absolute
+                                    left: 0
+                                    top: 10px
+                                    width: 50px
+                                    height: fit-content
+                                    background: $main-color
+                                    text-align: center
+                                    font-size: 0.9rem
+                                .overlay
+                                    position: absolute
+                                    inset: 0
+                                    width: 100%
+                                    height: 100%
+                                    background: #ffa45c54
+                                    opacity: 0
+                                    visibility: hidden
+                                    transition: 0.5s
+                                    display: flex
+                                    align-items: flex-end
+                                    .btns
+                                        display: flex
+                                        justify-content: center
+                                        gap: 10px
+                                        width: 100%
+                                        padding: 10px 0
+                                        a.btn
+                                            background: #000
+                                            border-radius: 0
+                                            display: flex
+                                            gap: 10px
+                                            padding: 10px 5px
+                                            font-size: 0.8rem
+                                            text-transform: uppercase
+                                            transition: 0.5s
+                                            color: #fff
+                                            span
+                                            .icon
+                                                font-size: 0.8rem
+                                                svg
+                                            &:nth-of-type(2)
+                                                background: #fff
+                                                color: #000
+                                            &:hover
+                                                background: $main-color
+                                                color: #fff
+                            .col-info
+                                padding: 20px
+                                h5
+                                    font-size: 1rem
+                                    text-transform: uppercase
+                                    font-weight: 100
+                                    line-height: 1.8
+                                    margin-bottom: 10px
+                                .inline-dev
+                                    font-size: 0.9rem
+                                    .pricing
+                                        span
+                                        span.des
+                                            text-decoration: line-through
+                                            opacity: 0.5
+                                            margin-right: 5px
+                                        span.after-des
+                                    .stars
+                                        gap: 2px
+                                        .icon
+                                            svg
+                                                color: $main-color
+                            &:hover
+                                box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.12)
+                                img
+                                    transform: scale(1.1)
+                                .overlay
+                                    opacity: 1
+                                    visibility: visible
+            .new-collections
+                .new-collections-content
+                    .row
+                        .img
+                            img
+                        .col-content
+                            height: 100%
+                            display: flex
+                            flex-direction: column
+                            justify-content: center
+                            background: transparent
+                            margin-left: -200px
+                            gap: 20px
+                            h3
+                                font-size: 2rem
+                                text-transform: uppercase
+                                letter-spacing: 2px
+                                font-weight: 100
+                                line-height: 1.5
+                            p
+                            a.btn
+                                background: #fff
+                                width: fit-content
+                                margin-right: auto
+                                padding: 10px 20px
+                                border-radius: 30px
+                                transition: 0.5s
+                                box-shadow: 0 0 5px rgba(0, 0, 0, 0.12)
+                                &:hover
+                                    background: $main-color
+                                    color: #fff
+                        &:nth-of-type(2)
+                            .col-content
+                                margin-left: 0
+                            .img
+                                border: 15px solid #fff
+                                margin-top: -75px
+            .stats
+                background: url(../../assets/imgs/bg_4.jpg.webp) no-repeat
+                background-size: cover
+                background-position: center
+                height: 50vh
+                .stats-content
+                    height: 100%
+                    .row
+                        height: 100%
+                        align-items: center
+                        .col-content
+                            gap: 10px
+                            h6
+                                font-size: 2rem
+                            span
+                                opacity: 0.9
+                                text-transform: uppercase
+                                font-size: 0.8rem
+            .feedback
+                .feedback-content
+                    .section-text
+                        width: 55%
+                        margin: 0 auto
+                    .row
+                        .carousels
+                            .carousels-items
+                                .carousels-item
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 30px
+                                    padding: 0 50px
+                                    .img
+                                        position: relative
+                                        width: 100px
+                                        height: 100px
+                                        border-radius: 50%
+                                        img
+                                            border-radius: 50%
+                                        .icon
+                                            position: absolute
+                                            bottom: -12px
+                                            right: 0
+                                            width: 40px
+                                            height: 40px
+                                            background: #fff
+                                            border-radius: 50%
+                                            line-height: 40px
+                                            text-align: center
+                                            color: $main-color
+                                    .box
+                                        padding: 5px 0 5px 20px
+                                        font-size: 0.9rem
+                                        opacity: 0.8
+                                        border-left: 1px solid #ccc
+                                        position: relative
+                                        line-height: 1.8
+                                        &::before
+                                            content: ""
+                                            position: absolute
+                                            left: -2px
+                                            top: 50%
+                                            transform: translateY(-50%)
+                                            width: 3px
+                                            height: 30px
+                                            background: $main-color
+                                        p
+                                    .info
+                                        p.name
+                                            font-size: 1.2rem
+                                        span.posi
+                                            text-transform: uppercase
+                                            font-size: 0.7rem
+                                            opacity: 0.7
+                                            letter-spacing: 2px
+                            ul.indicators
+                                width: fit-content
+                                margin: 80px auto
+                                gap: 10px
+                                li
+                                    width: 12px
+                                    height: 12px
+                                    border-radius: 50%
+                                    background: #ccc
+                                li.active
+                                    background: $main-color
+            .newsletter
+                height: 50vh
+                border-top: 1px solid #ccc
+                .newsletter-content
+                    justify-content: center
+                    align-items: center
+                    display: flex
+                    flex-direction: column
+                    gap: 40px
+                    height: 100%
+                    h2
+                        font-size: 2.6rem
+                        font-weight: 500
+                    .form
+                        input
+                            border: 1px solid #000
+                            padding: 15px
+                            font-size: 0.8rem
+                            text-transform: uppercase
+                            letter-spacing: 2px
+                        input[type="text"]
+                            width: 300px
+                            border-right: 0
+                        input[type="submit"]
+                            border-left: 0
+                            background: #000
+                            color: #fff
+        footer
+            position: relative
+            background: $second-color
+            .footer-up
+                .footer-up-content
+                    .row
+                        .col-content
+                            gap: 35px
+                            .logo
+                                a
+                                    color: #000
+                                    letter-spacing: 3px
+                                    text-transform: uppercase
+                                    font-size: 0.8rem
+                            p
+                                font-size: 0.94rem
+                                line-height: 2
+                            h3
+                                letter-spacing: 3px
+                                text-transform: uppercase
+                                font-size: 0.8rem
+                            ul
+                                gap: 15px
+                                li
+                                    font-size: 0.9rem
+                                    a
+                                        color: #868c98
+                                        display: block
+                                        transition: 0.5s
+                                    &:hover
+                                        a
+                                            color: $main-color
+                                            transform: translateX(5px)
+            .footer-down
+                .footer-down-content
+                    p
+                        font-size: 0.9rem
+                        color: #000
+                        span
+                            color: $main-color
+                            text-transform: capitalize
+                            font-size: 0.98rem
+        .list-fixed
+            position: fixed
+            right: 0
+            top: 50%
+            transform: translateY(-50%)
+            z-index: 9999
+            background: #fff
+            color: #333
+            padding: 20px 10px
+            gap: 15px
+            font-size: 1.2rem
+            border-radius: 10px 0 0 10px
+            cursor: pointer
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15)
+            svg
+                transition: 0.5s
+                &:hover
+                    color: $main-color
+        .up
+            position: absolute
+            top: -30px
+            left: 50%
+            transform: translateX(-50%)
+            z-index: 99
+            background: #fff
+            border-radius: 50%
+            outline: none
+            svg
+                color: #000
+            .btn
+                animation: top 0.5s ease-in-out infinite alternate
+                width: 60px
+                height: 60px
+                font-size: 1.1rem
+                display: flex
+                justify-content: center
+                align-items: center
+                cursor: pointer
+        .up.active
+            display: block
+@import 'shop'
+@import 'about'
+@import 'blog'
+@import 'contact'
+@import 'cart'
+@import 'checkOut'
+@import 'singleProduct'
+.page-welcome
+    background-image: url(../../assets/imgs/bg_6.jpg.webp)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    min-height: 60vh
+    position: relative
+    .page-welcome-content
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+        ul
+            width: fit-content
+            margin: 0 auto
+            gap: 10px
+            li
+                font-size: 0.8rem
+                text-transform: uppercase
+                letter-spacing: 2px
+                opacity: 0.8
+                a
+                    color: #000
+                    opacity: 0.8
+        h2
+            font-size: 2rem
+            text-transform: uppercase
+            letter-spacing: 2px
+            font-weight: bold
+            margin: 20px 0

@@ -1,0 +1,124 @@
+.blog-area
+    .blog-area-content
+        .row
+            .col-content
+                gap: 50px
+                .item
+                    gap: 20px
+                    .img
+                        min-width: 200px
+                        height: 250px
+                        max-width: 100%
+                        overflow: hidden
+                        img
+                            object-fit: contain
+                            // height: 250px
+                    .item-info
+                        gap: 10px
+                        .inline-div
+                            gap: 8px
+                            a
+                                color: #000
+                                opacity: 0.5
+                                font-size: 0.8rem
+                                text-transform: uppercase
+                                letter-spacing: 1px
+                                svg
+                        h2
+                            font-size: 1.3rem
+                            line-height: 1.5
+                            a
+                                color: #000
+                                transition: 0.5s
+                                &:hover
+                                    color: $main-color
+                        p
+                            font-size: 0.95rem
+                            line-height: 1.6
+                        a.btn
+                            width: fit-content
+                            background: $main-color
+                            color: #fff
+                            border-radius: 30px
+                            padding: 8px 20px
+                            border: 1px solid $main-color
+                            transition: 0.5s
+                            &:hover
+                                background: #fff
+                                color: $main-color
+            .sidebar
+                padding: 15px 30px
+                gap: 50px
+                .sidebar-item
+                    form.form
+                        position: relative
+                        font-size: 0.75rem
+                        input
+                            width: 100%
+                            padding: 15px 10px
+                            border: 1px solid #000
+                            &::placeholder
+                                letter-spacing: 1px
+                                color: #000
+                                opacity: 0.8
+                                text-transform: uppercase
+                        &::after
+                            content: "\f002"
+                            font-family: "Font Awesome 5 free"
+                            font-weight: 900
+                            position: absolute
+                            top: 50%
+                            right: 15px
+                            transform: translateY(-50%)
+                    h5
+                        text-transform: uppercase
+                        letter-spacing: 1px
+                        margin-bottom: 30px
+                    ul
+                        display: flex
+                        flex-direction: column
+                        gap: 20px
+                        li
+                            display: flex
+                            justify-content: space-between
+                            font-size: 0.9rem
+                            padding-bottom: 12px
+                            border-bottom: 1px solid #eee
+                            a
+                                color: #000
+                            span
+                                opacity: 0.4
+                        li.d-flex
+                            gap: 10px
+                            .img
+                                width: 35%
+                            .li-info
+                                flex: 1
+                                h3
+                                    margin-bottom: 10px
+                                    font-size: 1rem
+                                    line-height: 1.3
+                                    a
+                                        color: #000
+                                        transition: 0.5s
+                                        &:hover
+                                            color: $main-color
+                                .inline-div
+                                    font-size: 0.7rem
+                                    gap: 5px
+                                    span
+                                        gap: 4px
+                                        svg
+                    .tags
+                        display: flex
+                        flex-wrap: wrap
+                        gap: 10px
+                        span.btn
+                            border: 1px solid #ccc
+                            padding: 5px 10px
+                            transition: 0.3s
+                            font-size: 0.7rem
+                            text-transform: uppercase
+                            letter-spacing: 1px
+                    p
+                        line-height: 1.8

@@ -1,0 +1,103 @@
+
+/* For large devices */
+// @media only screen and (min-width: 1001px)
+
+/* For medium devices */
+// @media only screen and (min-width: 769px) and (max-width: 1199px)
+
+/* For medium and small devices */
+@media only screen and (max-width: 991px)
+    .fixed-dev
+        .fixed-dev-content
+            .col-content
+                margin-bottom: 12px
+    header
+        .collapse
+            position: absolute
+            width: 100%
+            top: calc(100%)
+            z-index: 9
+            a.active
+                color: $second-color !important
+            li
+                a
+                    &:hover
+                        color: $second-color !important
+                a.before-hot
+                    &::before
+                        content: none !important
+        .drop-down
+            left: 50px
+    main
+        .welcome
+            .welcome-content
+                .row
+                    .col-content
+                        margin-top: 10%
+                    .img
+                        display: none
+        .ship-ways
+            .ship-ways-content
+                .col-content
+                    .packaging-boxs
+                        .box
+                            margin-bottom: 30px
+        .best-seller
+            .best-seller-content
+                .row
+                    .col-content
+                        margin-bottom: 30px
+        .feedback
+            .feedback-content
+                .section-text
+                    width: 90% !important
+                    text-align: center
+                .carousels-item
+                    margin-bottom: 30px
+        .add-to-cart
+            .img
+                margin-bottom: 30px !important
+        .contact-area
+            .contact-info
+                .info-box
+                    margin-bottom: 20px
+// // /* For small devices */
+@media only screen and (max-width: 768px)
+    .fixed-dev
+        .fixed-dev-content
+            .col-content
+                justify-content: center
+    header
+        .navbar-brand
+            width: 50% !important
+        .icon-x
+            padding: 0 !important
+        .form
+            input,
+            .search-icon
+                font-size: 1rem !important
+            .search-icon
+                margin-left: -6% !important
+        .header-icons
+            display: none !important
+    main
+        .welcome
+            .welcome-content
+                .row
+                    .col-content
+                        padding-left: 70px !important
+        .new-collections
+            .new-collections-content
+                .row
+                    .col-content
+                        margin: 20px 0 !important
+                    .img
+                        margin: 0 !important
+        .newsletter
+            .newsletter-content
+                .form
+                    input[type="text"]
+                        width: 200px !important
+        .contact-area
+            form.form
+                padding: 50px 20px !important
